@@ -1,4 +1,4 @@
-# Sudoku
+# Sudoku Solver and Visualization
 This is a sudoku solver made using Python and Flask. Input a puzzle of your choice, or choose a premade one!
 
 ## Getting Started
