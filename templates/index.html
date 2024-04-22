@@ -1,1 +1,213 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .sudoku-board {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 2px; /* Creates a small space between the cells */
+        background: #000; /* Black lines between cells */
+        padding: 2px; /* Ensures the outer grid line is visible */
+      }
+
+      .board-row {
+        display: contents;
+      }
+
+      .board-cell {
+        background: #fff; /* White background for cells */
+        width: 40px; /* Width of each cell */
+        height: 40px; /* Height of each cell */
+        border: 1px solid #000; /* Border for each cell */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px; /* Larger font for the numbers */
+      }
+
+      /* Heavier border for 3x3 sections */
+      .sudoku-board > :nth-child(3n) .board-cell {
+        border-right: 2px solid #000;
+      }
+
+      .sudoku-board > :nth-child(27n) .board-cell {
+        border-bottom: 2px solid #000;
+      }
+
+      .sudoku-container {
+        margin: 20px;
+      }
+
+      .sudoku-title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .sudoku-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sudoku-list li {
+        margin-bottom: 20px;
+      }
+      .sudoku-input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      /* Make sure the input fits well inside the cell */
+      .board-cell {
+        padding: 0; /* Remove padding if any */
+      }
+
+      /* Optional: style the input when it is focused */
+      .sudoku-input:focus {
+        outline: none;
+        background-color: lightyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sudoku-container">
+      <h1 class="sudoku-title">Sudoku!</h1>
+      <div>Pick a board:</div>
+      <ol class="sudoku-list">
+        <li>
+          <form method="post" action="/solve">
+            <input type="hidden" name="board0" value="0" />
+            <div class="sudoku-board">
+              {% for row in board0 %}
+              <div class="board-row">
+                {% for cell in row %}
+                <div class="board-cell">
+                  <!-- Display the cell value -->
+                  {{ cell or ' ' }}
+                  <!-- Add a hidden input field for the cell -->
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="solve-button">
+              Solve This Puzzle
+            </button>
+          </form>
+          <form method="post" action="/solve">
+            <input type="hidden" name="board1" value="1" />
+            <div class="sudoku-board">
+              {% for row in board1 %}
+              <div class="board-row">
+                {% for cell in row %}
+                <div class="board-cell">
+                  <!-- Display the cell value -->
+                  {{ cell or ' ' }}
+                  <!-- Add a hidden input field for the cell -->
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="solve-button">
+              Solve This Puzzle
+            </button>
+          </form>
+          <form method="post" action="/solve">
+            <input type="hidden" name="board2" value="2" />
+            <div class="sudoku-board">
+              {% for row in board2 %}
+              <div class="board-row">
+                {% for cell in row %}
+                <div class="board-cell">
+                  <!-- Display the cell value -->
+                  {{ cell or ' ' }}
+                  <!-- Add a hidden input field for the cell -->
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="solve-button">
+              Solve This Puzzle
+            </button>
+          </form>
+          <form method="post" action="/solve">
+            <input type="hidden" name="board3" value="3" />
+            <div class="sudoku-board">
+              {% for row in board3 %}
+              <div class="board-row">
+                {% for cell in row %}
+                <div class="board-cell">
+                  <!-- Display the cell value -->
+                  {{ cell or ' ' }}
+                  <!-- Add a hidden input field for the cell -->
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="solve-button">
+              Solve This Puzzle
+            </button>
+          </form>
+          <form method="post" action="/solve">
+            <input type="hidden" name="board4" value="4" />
+            <div class="sudoku-board">
+              {% for row in board4 %}
+              <div class="board-row">
+                {% for cell in row %}
+                <div class="board-cell">
+                  <!-- Display the cell value -->
+                  {{ cell or ' ' }}
+                  <!-- Add a hidden input field for the cell -->
+                </div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="solve-button">
+              Solve This Puzzle
+            </button>
+          </form>
+        </li>
+      </ol>
+      <div>or</div>
+      <div>Input your own below:</div>
+      <form method="post" action="/solve">
+        <div class="sudoku-board">
+          {% for row_index in range(9) %}
+          <div class="board-row">
+            {% for col_index in range(9) %}
+            <div class="board-cell">
+              <input
+                type="text"
+                class="sudoku-input"
+                name="cell{{ row_index }}_{{ col_index }}"
+                maxlength="1"
+                pattern="[1-9]*"
+                inputmode="numeric"
+              />
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+        <button type="submit" class="solve-button">Solve Puzzle</button>
+      </form>
+    </div>
+  </body>
+</html>
