@@ -1,4 +1,4 @@
-from part2 import revise
+from revise import revise
 
 def AC3(csp):
     # initialize queue with every arc in the constraints
