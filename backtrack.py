@@ -1,14 +1,8 @@
-from part2 import remove
-from part3 import AC3
-from part4 import minimum_remaining_values
+from revise import remove
+from ac3 import AC3
+from heuristic import minimum_remaining_values
 from sudoku_constraints9x9 import constraint9x9
 import copy
-
-global puzzle_1
-global puzzle_2
-global puzzle_3
-global puzzle_4
-global puzzle_5
 
 def backtrack(csp):
     # if assignment is complete, print and return it
