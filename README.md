@@ -2,7 +2,7 @@
 This is a sudoku solver I made with Python and Flask for an Introductory Artificial Intelligence course. You can input a puzzle of your choice, or choose a premade one to solve!
 
 ## Getting Started
-Download programming_project_2.ipynb from this repository.
+Download sudoku.ipynb from this repository.
 The notebook has detailed instructions to get up and runnning with it.
 
 If you prefer, you can also use the .py files directly. After cloning, simply:
