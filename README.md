@@ -1,13 +1,13 @@
 # Sudoku Solver and Visualization
-This is a sudoku solver I made with Python and Flask for an Introductory AI course. You can input a puzzle of your choice, or choose a premade one!
+This is a sudoku solver I made with Python and Flask for an Introductory Artificial Intelligence course. You can input a puzzle of your choice, or choose a premade one to solve!
 
 ## Getting Started
-You can either clone the repository or download the programming_project_2.ipynb notebook.
+Download programming_project_2.ipynb from this repository.
 The notebook has detailed instructions to get up and runnning with it.
 
-Otherwise, you can also use the .py files directly. After cloning, simply:
-- navigate to part 6,
-- make sure you have Flask installed (double check the Python interpreter is the same version you installed Flask on)
+If you prefer, you can also use the .py files directly. After cloning, simply:
+- navigate to server.py,
+- make sure you have Flask installed (and double check the Python interpreter is the same version you installed Flask on)
 - run the program
 - click on the link that is output, and you're good to go!
 
